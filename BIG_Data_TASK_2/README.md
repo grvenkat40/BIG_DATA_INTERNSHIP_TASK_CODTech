@@ -24,11 +24,12 @@
 ## 📂 Files Structure
 
 ```bash
-FinanceProject/
-├── cleaned_finance_data.csv
+BIG_Data_Tast_2/
+|
 ├── task2_analysis.py
 ├── output/
-│   └── analysis_results.csv
+│   └── Finance_Card_cleaned.csv
+|   └── Finance_User_cleaned.csv
 └── README_task2.md
 ```
 

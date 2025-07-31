@@ -9,18 +9,22 @@ Welcome, machi! This README explains everything you need to replicate **Task 1
 ```
 My_projects/
 │
-├── data/
-│   ├── raw/             # original Kaggle CSV(s)
-│   └── cleaned/         # output from Task 1
-│       └── cleaned_data.csv
-│
-├── scripts/
-│   └── task1_clean.py   # Spark job for Task 1
-│
+├── Finance_Input_Pyspark/
+│   ├── card_data.csv             # original Kaggle CSV(s)
+│   └── user_data.csv
+|  
+│── Finance_card_cleaned_Data/
+│    |---part 0000 .csv
+|
+|── Finance_User_cleaned_Data/
+|    |--part 0000.csv
+|
+│── Task_1_Data_clean_pyspark.py   # Spark job for Task 1
+|
 └── README_Task1.md      # ← this file
 ```
 
----
+
 
 ## 🔧 Prerequisites
 
@@ -40,7 +44,7 @@ My_projects/
 > Path += %JAVA_HOME%\bin;%HADOOP_HOME%\bin;%SPARK_HOME%\bin
 > ```
 
----
+
 
 ## 🏃‍♂️ Running Task 1
 
@@ -57,7 +61,7 @@ spark-submit scripts/task1_clean.py \
 1. `import findspark, os; findspark.init()`
 2. Run the cells in `task1_clean.ipynb` (same logic as the script).
 
----
+
 
 ## 🧹 Cleaning Steps Implemented
 
@@ -70,7 +74,7 @@ spark-submit scripts/task1_clean.py \
 | 5    | **Column pruning / renaming** – kept only relevant features and renamed to snake\_case                                |
 | 6    | **Write** cleaned DataFrame with `coalesce(1)` + `mode("overwrite")` to the `data/cleaned` folder                     |
 
----
+
 
 ## ✅ Expected Output
 
@@ -84,7 +88,7 @@ spark-submit scripts/task1_clean.py \
    |-- year: integer                       (nullable = true)
   ```
 
----
+
 
 ## 🛠 Troubleshooting Tips
 
@@ -94,16 +98,4 @@ spark-submit scripts/task1_clean.py \
 | `Py4JJavaError` when writing         | Use raw string paths (`r"D:\…"`), avoid OneDrive sync folders |
 | `winutils.exe` not found             | Ensure `C:\hadoop‑3.2.2\bin` in `Path` & file present         |
 
----
-
-## 🚀 Next Steps (Task 2 Preview)
-
-In **Task 2** you’ll:
-
-1. Load `cleaned_data.csv` into Spark.
-2. Apply filters (e.g., `per_capita_income > 30 000`).
-3. Group by dimensions (state, year) and compute aggregates (sum, avg, count).
-4. Save aggregated results for visualization.
-
-Happy crunching, machi! 🎉
 

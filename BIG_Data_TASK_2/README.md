@@ -25,10 +25,10 @@
 
 ```bash
 FinanceProject/
-├── cleaned_finance_data.csv
-├── task2_analysis.py
-├── output/
-│   └── analysis_results.csv
+├── Finance_user_Cleaned.csv
+├── Finance_card_Cleaned.csv
+├──task2_analysis.py
+│ 
 └── README_task2.md
 ```
 
